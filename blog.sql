@@ -69,4 +69,4 @@ SELECT usuario.*
 FROM usuario
 JOIN post
 ON usuario.id = post.usuario_id
-WHERE post.fecha BETWEEN '202-06-01' AND '2020-06-30';
+WHERE post.fecha BETWEEN '2020-06-01' AND '2020-06-30';
