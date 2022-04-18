@@ -41,9 +41,19 @@ ON usuario.id = post.usuario_id
 WHERE usuario.id = 5;
 -- 5. Listar el correo, id y el detalle de todos los comentarios que no hayan sido realizados
 -- por el usuario con email usuario06@hotmail.com.
-
+SELECT usuario.email, comentario.id, comentario.texto
+FROM usuario
+JOIN comentario
+ON usuario.id = comentario.usuario_id
+WHERE usuario.email != 'usuario06@hotmail.com';
 
 -- 6. Listar los usuarios que no han publicado ningún post.
+SELECT *
+FROM usuario
+LEFT JOIN post
+ON usuario.id = post.usuario_id
+WHERE post.usuario_id IS NULL;
 -- 7. Listar todos los post con sus comentarios (incluyendo aquellos que no poseen
 -- comentarios).
+
 -- 8. Listar todos los usuarios que hayan publicado un post en Junio.
