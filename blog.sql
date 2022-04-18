@@ -60,3 +60,13 @@ FROM post
 FULL OUTER JOIN comentario
 ON post.id = comentario.post_id;
 -- 8. Listar todos los usuarios que hayan publicado un post en Junio.
+-- SELECT usuario.*
+-- FROM usuario
+-- JOIN post
+-- ON usuario.id = post.usuario_id
+-- WHERE EXTRACT(MONTH FROM post.fecha) = 6;
+SELECT usuario.*
+FROM usuario
+JOIN post
+ON usuario.id = post.usuario_id
+WHERE post.fecha BETWEEN '202-06-01' AND '2020-06-30';
