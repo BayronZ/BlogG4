@@ -55,5 +55,8 @@ ON usuario.id = post.usuario_id
 WHERE post.usuario_id IS NULL;
 -- 7. Listar todos los post con sus comentarios (incluyendo aquellos que no poseen
 -- comentarios).
-
+SELECT *
+FROM post
+FULL OUTER JOIN comentario
+ON post.id = comentario.post_id;
 -- 8. Listar todos los usuarios que hayan publicado un post en Junio.
